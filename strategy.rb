@@ -2,6 +2,7 @@
 
 on_turn do
 
+=begin
   first_player = visible_players.first || opponents.first
   if first_player
     run = move_away_from!(visible_players.first)
@@ -12,7 +13,14 @@ on_turn do
       return run
     end
   end
+=end
 
-  return first_possible_move 'nesw'
+  #first_possible_move 'nesw'
+
+  if rand > 0.5
+    'f'
+  else
+    'n'
+  end
 
 end
