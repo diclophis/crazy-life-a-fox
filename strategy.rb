@@ -37,7 +37,13 @@ on_turn do
     'f'
   else
     x, y = robot.x, robot.y
-    first_possible_move 'nesw'
+    if x == 0
+      first_possible_move 'nesw'
+    elsif y == 0
+      first_possible_move 'wnes'
+    else
+      first_possible_move 'wsen'
+    end
 =begin
     x, y = robot.x, robot.y
     return first_possible_move 'nesw' if x == 0
