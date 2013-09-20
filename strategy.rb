@@ -36,6 +36,7 @@ on_turn do
   if rand > 0.5
     'f'
   else
+    x, y = robot.x, robot.y
     first_possible_move 'nesw'
 =begin
     x, y = robot.x, robot.y
