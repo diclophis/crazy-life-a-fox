@@ -1,5 +1,11 @@
 # crazy like a fox strategy
 
+do_rand_rot = true
+
+def rand_rot
+  "r" + (rand * 360.0).to_i.to_s
+end
+
 on_turn do
 
 =begin
@@ -33,17 +39,24 @@ on_turn do
   #end
 =end
 
-  if rand > 0.5
-    'f'
+  if do_rand_rot
+    do_rand_rot = !do_rand_rot
+    rand_rot
   else
-    x, y = robot.x, robot.y
-    if x == 0
-      first_possible_move 'nesw'
-    elsif y == 0
-      first_possible_move 'wnes'
+    if rand > 0.5
+      'f'
     else
-      first_possible_move 'wsen'
+      x, y = robot.x, robot.y
+      if x == 0
+        first_possible_move 'nesw'
+      elsif y == 0
+        first_possible_move 'wnes'
+      else
+        first_possible_move 'wsen'
+      end
     end
+  end
+
 =begin
     x, y = robot.x, robot.y
     return first_possible_move 'nesw' if x == 0
@@ -52,6 +65,4 @@ on_turn do
     return first_possible_move 'wnes' if y == 0
     return first_possible_move 'wsen'
 =end
-  end
-
 end
