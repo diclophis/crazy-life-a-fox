@@ -1,7 +1,6 @@
 GIT
-  remote: git@github.com:carbonfive/kablammo-strategy
-  revision: 40e97391aa588f49924c1b6e871396e4aa1ca295
-  branch: master
+  remote: git://github.com/carbonfive/kablammo-strategy.git
+  revision: c046dcf1d65442795e4f9cc60ef84fdb8f81c086
   specs:
     kablammo (0.1)
       execjs (= 1.4.0)
