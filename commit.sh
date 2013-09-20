@@ -2,7 +2,6 @@
 
 git add -A
 git commit -m "`date`"
-exit
 git push origin master
 sleep 10
 curl 'http://kablammo.io/strategies/523c979a421aa95b5500e27f/pull?'
