@@ -11,5 +11,5 @@ end
 extend Wang
 
 on_turn do
-  return rand_rot
+  "f"
 end
