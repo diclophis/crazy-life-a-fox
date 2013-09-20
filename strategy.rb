@@ -15,12 +15,11 @@ on_turn do
   end
 =end
 
-  #first_possible_move 'nesw'
 
   if rand > 0.5
     'f'
   else
-    'n'
+    first_possible_move 'nesw'
   end
 
 end
