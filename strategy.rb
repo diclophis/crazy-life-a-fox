@@ -43,12 +43,12 @@ on_turn do
   #end
 =end
 
-  if @do_rand_rot
+  if true || @do_rand_rot
     @do_rand_rot = !@do_rand_rot
-    rand_rot
+    return rand_rot
   else
     if rand > 0.5
-      'f'
+      return 'f'
     else
       x, y = robot.x, robot.y
       if x == 0
