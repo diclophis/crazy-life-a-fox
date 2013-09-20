@@ -17,7 +17,7 @@ on_turn do
 
   first_player = visible_players.first || opponents.first
   if first_player
-    #run = move_away_from!(first_player)
+    move_away_from!(first_player)
   end
 
   #  run
