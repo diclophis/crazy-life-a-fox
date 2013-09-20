@@ -1,5 +1,11 @@
 # crazy like a fox strategy
 
 on_turn do
-  move_away_from!(visible_players.first)
+  run = move_away_from!(visible_players.first)
+  charge = move_towards!(visible_players.first)
+  if can_move?(run)
+    run
+  else
+    charge
+  end
 end
