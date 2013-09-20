@@ -13,6 +13,9 @@ on_turn do
     end
   end
 =end
-
-  return first_possible_move 'nesw'
+  if rand > 0.5
+    return 'f'
+  else
+    return first_possible_move 'nesw'
+  end
 end
