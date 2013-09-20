@@ -1,10 +1,14 @@
 # crazy like a fox strategy
 
-do_rand_rot = true
+@do_rand_rot = true
 
-def rand_rot
-  "f" + (rand * 360.0).to_i.to_s
+module Wang
+  def rand_rot
+    "f" + (rand * 360.0).to_i.to_s
+  end
 end
+
+extend Wang
 
 on_turn do
 
@@ -39,8 +43,8 @@ on_turn do
   #end
 =end
 
-  if do_rand_rot
-    do_rand_rot = !do_rand_rot
+  if @do_rand_rot
+    @do_rand_rot = !@do_rand_rot
     rand_rot
   else
     if rand > 0.5
