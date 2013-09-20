@@ -16,8 +16,10 @@ on_turn do
 =end
 
   first_player = visible_players.first || opponents.first
-  #if first_player
-  #  run = move_away_from!(visible_players.first)
+  if first_player
+    run = move_away_from!(first_player)
+  end
+
   #  run
   #else
     if rand > 0.5
