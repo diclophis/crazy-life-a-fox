@@ -13,10 +13,10 @@ on_turn do
     end
   end
 =end
-  if rand > 0.5
+#  if rand > 0.5
     return 'f'
-  else
-    return 'n'
-    #return first_possible_move 'nesw'
-  end
+#  else
+#    return 'n'
+#    #return first_possible_move 'nesw'
+#  end
 end
