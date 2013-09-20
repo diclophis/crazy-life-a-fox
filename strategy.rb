@@ -27,7 +27,7 @@ on_turn do
     if rand > 0.9
       'f'
     else
-      run || first_possible_move('nesw')
+      first_possible_move('nesw')
     end
   #end
 
