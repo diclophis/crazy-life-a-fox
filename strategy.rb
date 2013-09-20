@@ -3,7 +3,7 @@
 do_rand_rot = true
 
 def rand_rot
-  "r" + (rand * 360.0).to_i.to_s
+  "f" + (rand * 360.0).to_i.to_s
 end
 
 on_turn do
