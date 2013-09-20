@@ -16,6 +16,7 @@ on_turn do
   if rand > 0.5
     return 'f'
   else
-    return first_possible_move 'nesw'
+    return 'n'
+    #return first_possible_move 'nesw'
   end
 end
