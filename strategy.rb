@@ -15,6 +15,7 @@ on_turn do
   end
 =end
 
+=begin
   run = nil
 
   first_player = visible_players.first || opponents.first
@@ -30,5 +31,17 @@ on_turn do
       first_possible_move('nesw')
     end
   #end
+=end
+
+  if rand > 0.5
+    return 'f'
+  else
+    x, y = robot.x, robot.y
+    return first_possible_move 'nesw' if x == 0
+    return first_possible_move 'eswn' if y == @battle.board.height - 1
+    return first_possible_move 'swne' if x == @battle.board.width - 1
+    return first_possible_move 'wnes' if y == 0
+    return first_possible_move 'wsen'
+  end
 
 end
