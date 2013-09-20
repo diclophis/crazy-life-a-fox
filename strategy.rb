@@ -16,15 +16,15 @@ on_turn do
 =end
 
   first_player = visible_players.first || opponents.first
-  if first_player
-    run = move_away_from!(visible_players.first)
-    run
-  else
+  #if first_player
+  #  run = move_away_from!(visible_players.first)
+  #  run
+  #else
     if rand > 0.5
       'f'
     else
       first_possible_move 'nesw'
     end
-  end
+  #end
 
 end
