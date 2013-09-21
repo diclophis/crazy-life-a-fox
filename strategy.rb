@@ -12,6 +12,17 @@ module Defensive
     first_possible_move 'wsen'
   end
 
+  def fire_at!(enemy, compensate = 0)
+    direction = robot.direction_to(enemy).round
+    skew = direction - robot.rotation
+    distance = robot.distance_to(enemy)
+    max_distance = Math.sqrt(board.height * board.height + board.width * board.width)
+    compensation = ( 10 - ( (10 - 3) * (distance / max_distance) ) ).round
+    compensation *= -1 if rand(0..1) == 0
+    skew += compensation if compensate > rand
+    fire! skew
+  end
+
   def dodge(enemy)
     toward = moves_toward enemy
     d1 = enemy.distance_to robot.target_for(toward[1])
@@ -27,7 +38,11 @@ module Defensive
   def run_away
     enemy = opponents.first
     return hunt unless enemy
-    return dodge enemy
+    if rand > 0.4
+      return dodge enemy
+    else
+      return fire_at! enemy, 0.75
+    end
   end
 
   def act_defensively
