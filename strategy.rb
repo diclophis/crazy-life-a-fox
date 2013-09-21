@@ -56,6 +56,12 @@ module Defensive
       return run_away
     end
   end
+
+  def act_foo
+    enemy = opponents.first
+    return hunt unless enemy
+    return fire_at! enemy
+  end
 end
 
 =begin
@@ -136,7 +142,5 @@ end
 include Defensive
 
 on_turn do
-  enemy = opponents.first
-  return hunt unless enemy
-  return fire_at! enemy
+  act_foo
 end
