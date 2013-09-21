@@ -59,11 +59,18 @@ module Defensive
 
   def act_foo
     enemy = opponents.first
-    return hunt unless enemy
-    if rand > 0.5
-      return dodge enemy
+    if enemy
+      if rand > 0.5
+        return dodge enemy
+      else
+        return fire_at! enemy
+      end
     else
-      return fire_at! enemy
+      if rand > 0.5
+        return hunt
+      else
+        return dance
+      end
     end
   end
 end
