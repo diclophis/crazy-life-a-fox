@@ -38,7 +38,7 @@ module Defensive
   def run_away
     enemy = opponents.first
     return hunt unless enemy
-    if rand > 0.7
+    if rand > 0.9
       return dodge enemy
     else
       return fire_at! enemy, 0.75
@@ -48,7 +48,7 @@ module Defensive
   def act_defensively
     enemy = opponents.first
     return dance unless enemy
-    if rand > 0.33
+    if rand > 0.9
       return dodge enemy if enemy.can_fire_at? me
       return rest unless my.ammo_full?
       return move_away_from! enemy
