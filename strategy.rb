@@ -66,7 +66,7 @@ module Defensive
         return fire_at! enemy
       end
     else
-      if rand > 0.5
+      if rand > 0.75
         return hunt
       else
         return dance
