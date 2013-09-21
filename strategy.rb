@@ -136,5 +136,5 @@ end
 include Defensive
 
 on_turn do
-  return run_away
+  hunt
 end
