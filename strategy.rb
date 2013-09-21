@@ -1,4 +1,3 @@
-=begin
 module Defensive
   def dance
     first_possible_move %w(n s e w).shuffle
@@ -24,6 +23,8 @@ module Defensive
     move_away_from! enemy
   end
 end
+
+=begin
 
 module Aggressive
   def hunt
@@ -58,7 +59,6 @@ module Aggressive
 end
 
 include Aggressive
-include Defensive
 
 def closest_enemy
   smallest_distance = 10000000
@@ -99,6 +99,8 @@ on_turn do
 end
 =end
 
+include Defensive
+
 on_turn do
-  '.'
+  act_defensively
 end
