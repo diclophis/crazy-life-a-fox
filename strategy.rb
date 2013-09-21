@@ -136,5 +136,7 @@ end
 include Defensive
 
 on_turn do
-  hunt
+  enemy = opponents.first
+  return hunt unless enemy
+  fire_at! enemy
 end
