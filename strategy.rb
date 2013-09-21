@@ -15,6 +15,12 @@ module Defensive
     first_possible_move moves
   end
 
+  def run_away
+    enemy = opponents.first
+    return dance unless enemy
+    return dodge enemy
+  end
+
   def act_defensively
     enemy = opponents.first
     return dance unless enemy
