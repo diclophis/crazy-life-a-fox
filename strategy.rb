@@ -3,6 +3,15 @@ module Defensive
     first_possible_move %w(n s e w).shuffle
   end
 
+  def hunt
+    x, y = robot.x, robot.y
+    return first_possible_move 'nesw' if x == 0
+    return first_possible_move 'eswn' if y == @battle.board.height - 1
+    return first_possible_move 'swne' if x == @battle.board.width - 1
+    return first_possible_move 'wnes' if y == 0
+    first_possible_move 'wsen'
+  end
+
   def dodge(enemy)
     toward = moves_toward enemy
     d1 = enemy.distance_to robot.target_for(toward[1])
@@ -17,7 +26,7 @@ module Defensive
 
   def run_away
     enemy = opponents.first
-    return dance unless enemy
+    return hunt unless enemy
     return dodge enemy
   end
 
