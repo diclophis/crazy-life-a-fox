@@ -38,11 +38,11 @@ module Defensive
   def run_away
     enemy = opponents.first
     return hunt unless enemy
-    if rand > 0.99
+    #if rand > 0.99
       return dodge enemy
-    else
-      return fire_at! enemy, 0.0
-    end
+    #else
+    #  return fire_at! enemy, 0.0
+    #end
   end
 
   def act_defensively
@@ -136,5 +136,5 @@ end
 include Defensive
 
 on_turn do
-  return act_defensively
+  return run_away
 end
